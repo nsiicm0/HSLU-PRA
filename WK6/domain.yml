@@ -1,0 +1,48 @@
+intents:
+  - greet
+  - bye
+  - thank
+  - serve
+  - inform
+  - out_of_scope
+
+responses:
+  utter_noworries:
+    - text: No worries!
+  utter_greet:
+    - text: Hi
+  utter_bye:
+    - text: Bye!
+  utter_ask_setting:
+    - text: What shall I adjust?
+  utter_ask_direction:
+    - text: How shall I adjust?
+  utter_ask_amount:
+    - text: By what amount shall I adjust?
+  utter_out_of_scope:
+    - text: Sorry, I can’t handle that request.
+  utter_slots_values:
+    - text: "I will let the home automation system know of your request!\n
+              - Setting to adjust: {setting}\n
+              - How: {direction}\n
+              - By: {amount}"
+
+slots:
+  setting:
+    type: unfeaturized
+  direction:
+    type: unfeaturized
+  amount:
+    type: unfeaturized
+
+forms:
+  - change_form
+
+entities:
+  - setting
+  - direction
+  - amount
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
